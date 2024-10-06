@@ -89,7 +89,7 @@ position = Vector2(2, -5)
 scale = Vector2(1.7197, 1.75)
 sprite_frames = SubResource("SpriteFrames_an4fa")
 animation = &"Idel"
-frame_progress = 0.475851
+frame_progress = 0.406871
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
