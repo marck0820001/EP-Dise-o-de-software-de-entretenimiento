@@ -1,0 +1,826 @@
+[gd_scene load_steps=16 format=3 uid="uid://d0xkm5hspirej"]
+
+[ext_resource type="PackedScene" uid="uid://cgcwljy4nn2g6" path="res://Player2/player.tscn" id="1_v502r"]
+[ext_resource type="PackedScene" uid="uid://v5dtoepfhos2" path="res://background/Background.tscn" id="2_g3kmx"]
+[ext_resource type="Texture2D" uid="uid://tjbv36lmvff0" path="res://Sunny Land Collection Files/Assets/Environments/Jungle/Layers/tileset.png" id="3_ckykx"]
+[ext_resource type="Texture2D" uid="uid://dph1w6fmnlkpx" path="res://Sunny Land Collection Files/Assets/Environments/Forest/Forest Pack/PNG/environment/props/sprites/mushroom-red.png" id="5_1bc7y"]
+[ext_resource type="Texture2D" uid="uid://bcs88jatp1sbh" path="res://Sunny Land Collection Files/Assets/Environments/Forest/Forest Expansion Pack/Sprites/shroom_house.png" id="6_as724"]
+[ext_resource type="Texture2D" uid="uid://7uhxqk5taklk" path="res://Sunny Land Collection Files/Assets/Environments/Forest/Forest Pack/PNG/environment/props/sprites/mushroom-brown.png" id="6_w4w1l"]
+[ext_resource type="Texture2D" uid="uid://xrju684cyc1v" path="res://Sunny Land Collection Files/Assets/Environments/Treasure Hoard/PNG/ground.png" id="7_fbb06"]
+[ext_resource type="Texture2D" uid="uid://b1rj3pqc6lnya" path="res://Sunny Land Collection Files/Assets/Environments/Lava Place/PNG/lava-tile.png" id="8_85r02"]
+[ext_resource type="Texture2D" uid="uid://cfjco6g03160v" path="res://Sunny Land Collection Files/Assets/Environments/Lava Place/PNG/middle-rocks.png" id="9_t6224"]
+[ext_resource type="PackedScene" uid="uid://ddpbwqrbqels1" path="res://player3/player.tscn" id="10_jyich"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wn30g"]
+size = Vector2(143.25, 217)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x71yu"]
+size = Vector2(146.25, 313.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3jt0s"]
+size = Vector2(412.672, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dgu5"]
+size = Vector2(1740.75, 97.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cevic"]
+size = Vector2(100.5, 487.5)
+
+[node name="World" type="Node2D"]
+position = Vector2(-460, -236)
+
+[node name="ShroomHouse" type="Sprite2D" parent="."]
+position = Vector2(1344, 499)
+texture = ExtResource("6_as724")
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("1_v502r")]
+position = Vector2(793, 465)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("10_jyich")]
+position = Vector2(675, 412)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(28, -64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(526, 577)
+shape = SubResource("RectangleShape2D_wn30g")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2131, 609.75)
+shape = SubResource("RectangleShape2D_x71yu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1860, 643)
+shape = SubResource("RectangleShape2D_3jt0s")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2003, 583)
+shape = SubResource("RectangleShape2D_3jt0s")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2110, 524)
+shape = SubResource("RectangleShape2D_3jt0s")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(804, 639)
+shape = SubResource("RectangleShape2D_3jt0s")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(659, 587)
+shape = SubResource("RectangleShape2D_3jt0s")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(483.336, 532)
+shape = SubResource("RectangleShape2D_3jt0s")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1334, 717)
+shape = SubResource("RectangleShape2D_4dgu5")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(411, 516.75)
+shape = SubResource("RectangleShape2D_cevic")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2254, 557)
+shape = SubResource("RectangleShape2D_cevic")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 493.0
+offset_top = 676.0
+offset_right = 1440.0
+offset_bottom = 884.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 1418.0
+offset_top = 715.0
+offset_right = 2365.0
+offset_bottom = 923.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BG" parent="." instance=ExtResource("2_g3kmx")]
+
+[node name="Tileset" type="Sprite2D" parent="."]
+position = Vector2(1015, 563)
+scale = Vector2(1, 1.07813)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset2" type="Sprite2D" parent="."]
+position = Vector2(968, 564)
+scale = Vector2(1, 1.07813)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset3" type="Sprite2D" parent="."]
+position = Vector2(921, 564)
+scale = Vector2(1, 1.07813)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset5" type="Sprite2D" parent="."]
+position = Vector2(870, 512.5)
+scale = Vector2(1, 1.07813)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset6" type="Sprite2D" parent="."]
+position = Vector2(823, 513.5)
+scale = Vector2(1, 1.07813)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset7" type="Sprite2D" parent="."]
+position = Vector2(776, 513.5)
+scale = Vector2(1, 1.07813)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset8" type="Sprite2D" parent="."]
+position = Vector2(728, 513.5)
+scale = Vector2(1, 1.07813)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset15" type="Sprite2D" parent="."]
+position = Vector2(1799, 568.5)
+scale = Vector2(1, 1.07813)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset16" type="Sprite2D" parent="."]
+position = Vector2(1752, 568.5)
+scale = Vector2(1, 1.07813)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset17" type="Sprite2D" parent="."]
+position = Vector2(1704, 568.5)
+scale = Vector2(1, 1.07813)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset20" type="Sprite2D" parent="."]
+position = Vector2(1847, 510)
+scale = Vector2(1.16667, 1.15625)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset21" type="Sprite2D" parent="."]
+position = Vector2(1902, 510)
+scale = Vector2(1.16667, 1.15625)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset22" type="Sprite2D" parent="."]
+position = Vector2(1959, 455)
+scale = Vector2(1.16667, 1.15625)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset24" type="Sprite2D" parent="."]
+position = Vector2(2063.5, 455)
+scale = Vector2(0.895834, 1.15625)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset23" type="Sprite2D" parent="."]
+position = Vector2(2014, 455)
+scale = Vector2(1.16667, 1.15625)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset25" type="Sprite2D" parent="."]
+position = Vector2(2112, 412)
+scale = Vector2(1.16667, 1.15625)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset26" type="Sprite2D" parent="."]
+position = Vector2(2216.5, 412)
+scale = Vector2(0.895834, 1.15625)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset27" type="Sprite2D" parent="."]
+position = Vector2(2167, 412)
+scale = Vector2(1.16667, 1.15625)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset11" type="Sprite2D" parent="."]
+position = Vector2(605, 420.5)
+scale = Vector2(1, 1.07813)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset12" type="Sprite2D" parent="."]
+position = Vector2(558, 420.5)
+scale = Vector2(1, 1.07813)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset13" type="Sprite2D" parent="."]
+position = Vector2(510, 420.5)
+scale = Vector2(1, 1.07813)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset9" type="Sprite2D" parent="."]
+position = Vector2(699, 459.5)
+scale = Vector2(1, 1.07813)
+texture = ExtResource("3_ckykx")
+
+[node name="Tileset10" type="Sprite2D" parent="."]
+position = Vector2(651, 459.5)
+scale = Vector2(1, 1.07813)
+texture = ExtResource("3_ckykx")
+
+[node name="Mushroom-red" type="Sprite2D" parent="."]
+position = Vector2(1150, 589)
+texture = ExtResource("5_1bc7y")
+
+[node name="Mushroom-red2" type="Sprite2D" parent="."]
+position = Vector2(1477, 588)
+texture = ExtResource("5_1bc7y")
+
+[node name="Mushroom-brown" type="Sprite2D" parent="."]
+position = Vector2(1184, 591)
+texture = ExtResource("6_w4w1l")
+
+[node name="Mushroom-brown2" type="Sprite2D" parent="."]
+position = Vector2(1526, 587)
+texture = ExtResource("6_w4w1l")
+
+[node name="Ground" type="Sprite2D" parent="."]
+position = Vector2(1058, 624)
+texture = ExtResource("7_fbb06")
+
+[node name="Ground2" type="Sprite2D" parent="."]
+position = Vector2(1106, 624)
+texture = ExtResource("7_fbb06")
+
+[node name="Ground3" type="Sprite2D" parent="."]
+position = Vector2(1154, 624)
+texture = ExtResource("7_fbb06")
+
+[node name="Ground4" type="Sprite2D" parent="."]
+position = Vector2(1202, 624)
+texture = ExtResource("7_fbb06")
+
+[node name="Ground5" type="Sprite2D" parent="."]
+position = Vector2(1250, 624)
+texture = ExtResource("7_fbb06")
+
+[node name="Ground6" type="Sprite2D" parent="."]
+position = Vector2(1298, 624)
+texture = ExtResource("7_fbb06")
+
+[node name="Ground7" type="Sprite2D" parent="."]
+position = Vector2(1346, 624)
+texture = ExtResource("7_fbb06")
+
+[node name="Ground8" type="Sprite2D" parent="."]
+position = Vector2(1394, 624)
+texture = ExtResource("7_fbb06")
+
+[node name="Ground9" type="Sprite2D" parent="."]
+position = Vector2(1442, 624)
+texture = ExtResource("7_fbb06")
+
+[node name="Ground10" type="Sprite2D" parent="."]
+position = Vector2(1490, 624)
+texture = ExtResource("7_fbb06")
+
+[node name="Ground11" type="Sprite2D" parent="."]
+position = Vector2(1538, 624)
+texture = ExtResource("7_fbb06")
+
+[node name="Ground12" type="Sprite2D" parent="."]
+position = Vector2(1586, 624)
+texture = ExtResource("7_fbb06")
+
+[node name="Ground13" type="Sprite2D" parent="."]
+position = Vector2(1634, 624)
+texture = ExtResource("7_fbb06")
+
+[node name="Ground14" type="Sprite2D" parent="."]
+position = Vector2(1682, 624)
+texture = ExtResource("7_fbb06")
+
+[node name="Lava-tile" type="Sprite2D" parent="."]
+position = Vector2(1011, 622)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile2" type="Sprite2D" parent="."]
+position = Vector2(966, 622)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile3" type="Sprite2D" parent="."]
+position = Vector2(919, 620)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile4" type="Sprite2D" parent="."]
+position = Vector2(872, 619)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile5" type="Sprite2D" parent="."]
+position = Vector2(873, 566)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile6" type="Sprite2D" parent="."]
+position = Vector2(828, 566)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile7" type="Sprite2D" parent="."]
+position = Vector2(781, 564)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile8" type="Sprite2D" parent="."]
+position = Vector2(734, 563)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile9" type="Sprite2D" parent="."]
+position = Vector2(838, 619)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile10" type="Sprite2D" parent="."]
+position = Vector2(793, 619)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile11" type="Sprite2D" parent="."]
+position = Vector2(746, 617)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile12" type="Sprite2D" parent="."]
+position = Vector2(699.5, 616.625)
+scale = Vector2(1.02083, 1.02083)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile121" type="Sprite2D" parent="."]
+position = Vector2(670, 619)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile122" type="Sprite2D" parent="."]
+position = Vector2(623, 618)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile123" type="Sprite2D" parent="."]
+position = Vector2(589, 618)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile124" type="Sprite2D" parent="."]
+position = Vector2(544, 618)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile125" type="Sprite2D" parent="."]
+position = Vector2(497, 616)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile126" type="Sprite2D" parent="."]
+position = Vector2(450.5, 615.625)
+scale = Vector2(1.02083, 1.02083)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile127" type="Sprite2D" parent="."]
+position = Vector2(670, 669)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile128" type="Sprite2D" parent="."]
+position = Vector2(623, 668)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile129" type="Sprite2D" parent="."]
+position = Vector2(589, 668)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile130" type="Sprite2D" parent="."]
+position = Vector2(544, 668)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile131" type="Sprite2D" parent="."]
+position = Vector2(497, 666)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile132" type="Sprite2D" parent="."]
+position = Vector2(450.5, 665.625)
+scale = Vector2(1.02083, 1.02083)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile109" type="Sprite2D" parent="."]
+position = Vector2(688, 519)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile110" type="Sprite2D" parent="."]
+position = Vector2(641, 518)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile111" type="Sprite2D" parent="."]
+position = Vector2(607, 518)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile112" type="Sprite2D" parent="."]
+position = Vector2(562, 518)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile113" type="Sprite2D" parent="."]
+position = Vector2(515, 516)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile114" type="Sprite2D" parent="."]
+position = Vector2(468, 515)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile115" type="Sprite2D" parent="."]
+position = Vector2(622, 473)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile116" type="Sprite2D" parent="."]
+position = Vector2(575, 472)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile117" type="Sprite2D" parent="."]
+position = Vector2(541, 472)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile118" type="Sprite2D" parent="."]
+position = Vector2(496, 472)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile119" type="Sprite2D" parent="."]
+position = Vector2(449, 470)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile120" type="Sprite2D" parent="."]
+position = Vector2(402, 469)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile13" type="Sprite2D" parent="."]
+position = Vector2(1022, 677)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile14" type="Sprite2D" parent="."]
+position = Vector2(977, 677)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile15" type="Sprite2D" parent="."]
+position = Vector2(930, 675)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile16" type="Sprite2D" parent="."]
+position = Vector2(883, 674)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile17" type="Sprite2D" parent="."]
+position = Vector2(849, 674)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile18" type="Sprite2D" parent="."]
+position = Vector2(804, 674)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile19" type="Sprite2D" parent="."]
+position = Vector2(757, 672)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile20" type="Sprite2D" parent="."]
+position = Vector2(710, 671)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile21" type="Sprite2D" parent="."]
+position = Vector2(1371, 680)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile22" type="Sprite2D" parent="."]
+position = Vector2(1326, 680)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile23" type="Sprite2D" parent="."]
+position = Vector2(1279, 678)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile24" type="Sprite2D" parent="."]
+position = Vector2(1232, 677)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile25" type="Sprite2D" parent="."]
+position = Vector2(1198, 677)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile26" type="Sprite2D" parent="."]
+position = Vector2(1153, 677)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile27" type="Sprite2D" parent="."]
+position = Vector2(1106, 675)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile28" type="Sprite2D" parent="."]
+position = Vector2(1059, 674)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile29" type="Sprite2D" parent="."]
+position = Vector2(1514, 681)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile30" type="Sprite2D" parent="."]
+position = Vector2(1469, 681)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile31" type="Sprite2D" parent="."]
+position = Vector2(1422, 679)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile32" type="Sprite2D" parent="."]
+position = Vector2(1375, 678)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile33" type="Sprite2D" parent="."]
+position = Vector2(1341, 678)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile34" type="Sprite2D" parent="."]
+position = Vector2(1296, 678)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile35" type="Sprite2D" parent="."]
+position = Vector2(1249, 676)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile36" type="Sprite2D" parent="."]
+position = Vector2(1202, 675)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile37" type="Sprite2D" parent="."]
+position = Vector2(1866, 680)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile38" type="Sprite2D" parent="."]
+position = Vector2(1821, 680)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile39" type="Sprite2D" parent="."]
+position = Vector2(1774, 678)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile40" type="Sprite2D" parent="."]
+position = Vector2(1727, 677)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile41" type="Sprite2D" parent="."]
+position = Vector2(1693, 677)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile42" type="Sprite2D" parent="."]
+position = Vector2(1648, 677)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile43" type="Sprite2D" parent="."]
+position = Vector2(1601, 675)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile44" type="Sprite2D" parent="."]
+position = Vector2(1554, 674)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile45" type="Sprite2D" parent="."]
+position = Vector2(2038, 628)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile46" type="Sprite2D" parent="."]
+position = Vector2(1993, 628)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile47" type="Sprite2D" parent="."]
+position = Vector2(1946, 626)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile48" type="Sprite2D" parent="."]
+position = Vector2(1899, 625)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile49" type="Sprite2D" parent="."]
+position = Vector2(1865, 625)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile50" type="Sprite2D" parent="."]
+position = Vector2(1820, 625)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile51" type="Sprite2D" parent="."]
+position = Vector2(1773, 623)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile52" type="Sprite2D" parent="."]
+position = Vector2(1726, 622)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile53" type="Sprite2D" parent="."]
+position = Vector2(2151, 577)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile54" type="Sprite2D" parent="."]
+position = Vector2(2106, 577)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile55" type="Sprite2D" parent="."]
+position = Vector2(2059, 575)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile56" type="Sprite2D" parent="."]
+position = Vector2(2012, 574)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile57" type="Sprite2D" parent="."]
+position = Vector2(1978, 574)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile58" type="Sprite2D" parent="."]
+position = Vector2(1933, 574)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile59" type="Sprite2D" parent="."]
+position = Vector2(1886, 572)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile60" type="Sprite2D" parent="."]
+position = Vector2(1839, 571)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile61" type="Sprite2D" parent="."]
+position = Vector2(2260, 522)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile62" type="Sprite2D" parent="."]
+position = Vector2(2215, 522)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile63" type="Sprite2D" parent="."]
+position = Vector2(2168, 520)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile64" type="Sprite2D" parent="."]
+position = Vector2(2121, 519)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile65" type="Sprite2D" parent="."]
+position = Vector2(2087, 519)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile66" type="Sprite2D" parent="."]
+position = Vector2(2042, 519)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile67" type="Sprite2D" parent="."]
+position = Vector2(1995, 517)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile68" type="Sprite2D" parent="."]
+position = Vector2(1948, 516)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile69" type="Sprite2D" parent="."]
+position = Vector2(2406, 480)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile70" type="Sprite2D" parent="."]
+position = Vector2(2361, 480)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile71" type="Sprite2D" parent="."]
+position = Vector2(2314, 478)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile72" type="Sprite2D" parent="."]
+position = Vector2(2267, 477)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile73" type="Sprite2D" parent="."]
+position = Vector2(2233, 477)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile74" type="Sprite2D" parent="."]
+position = Vector2(2188, 477)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile75" type="Sprite2D" parent="."]
+position = Vector2(2141, 475)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile76" type="Sprite2D" parent="."]
+position = Vector2(2094, 474)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile77" type="Sprite2D" parent="."]
+position = Vector2(2223, 690)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile78" type="Sprite2D" parent="."]
+position = Vector2(2178, 690)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile79" type="Sprite2D" parent="."]
+position = Vector2(2131, 688)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile80" type="Sprite2D" parent="."]
+position = Vector2(2084, 687)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile81" type="Sprite2D" parent="."]
+position = Vector2(2050, 687)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile82" type="Sprite2D" parent="."]
+position = Vector2(2005, 687)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile83" type="Sprite2D" parent="."]
+position = Vector2(1958, 685)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile84" type="Sprite2D" parent="."]
+position = Vector2(1911, 684)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile85" type="Sprite2D" parent="."]
+position = Vector2(2332, 635)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile86" type="Sprite2D" parent="."]
+position = Vector2(2287, 635)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile87" type="Sprite2D" parent="."]
+position = Vector2(2240, 633)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile88" type="Sprite2D" parent="."]
+position = Vector2(2193, 632)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile89" type="Sprite2D" parent="."]
+position = Vector2(2159, 632)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile90" type="Sprite2D" parent="."]
+position = Vector2(2114, 632)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile91" type="Sprite2D" parent="."]
+position = Vector2(2067, 630)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile92" type="Sprite2D" parent="."]
+position = Vector2(2020, 629)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile93" type="Sprite2D" parent="."]
+position = Vector2(2355, 580)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile94" type="Sprite2D" parent="."]
+position = Vector2(2310, 580)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile95" type="Sprite2D" parent="."]
+position = Vector2(2263, 578)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile96" type="Sprite2D" parent="."]
+position = Vector2(2216, 577)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile97" type="Sprite2D" parent="."]
+position = Vector2(2182, 577)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile98" type="Sprite2D" parent="."]
+position = Vector2(2137, 577)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile99" type="Sprite2D" parent="."]
+position = Vector2(2090, 575)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile100" type="Sprite2D" parent="."]
+position = Vector2(2043, 574)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile101" type="Sprite2D" parent="."]
+position = Vector2(771, 567)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile102" type="Sprite2D" parent="."]
+position = Vector2(726, 567)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile103" type="Sprite2D" parent="."]
+position = Vector2(679, 565)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile104" type="Sprite2D" parent="."]
+position = Vector2(632, 564)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile105" type="Sprite2D" parent="."]
+position = Vector2(598, 564)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile106" type="Sprite2D" parent="."]
+position = Vector2(553, 564)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile107" type="Sprite2D" parent="."]
+position = Vector2(506, 562)
+texture = ExtResource("8_85r02")
+
+[node name="Lava-tile108" type="Sprite2D" parent="."]
+position = Vector2(459, 561)
+texture = ExtResource("8_85r02")
+
+[node name="Middle-rocks" type="Sprite2D" parent="."]
+position = Vector2(544, 566.5)
+scale = Vector2(1, 1.02083)
+texture = ExtResource("9_t6224")

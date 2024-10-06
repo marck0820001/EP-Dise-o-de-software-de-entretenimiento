@@ -1,0 +1,121 @@
+[gd_scene load_steps=23 format=3 uid="uid://cgcwljy4nn2g6"]
+
+[ext_resource type="Script" path="res://Player2/player2.gd" id="1_u5a4g"]
+[ext_resource type="Texture2D" uid="uid://djesyqq0ollor" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Slimer-Idle/slimer-idle1.png" id="2_wj1f4"]
+[ext_resource type="Texture2D" uid="uid://yncm6ps1m7o3" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Slimer-Idle/slimer-idle2.png" id="3_0t433"]
+[ext_resource type="Texture2D" uid="uid://dsgkdakjgngch" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Slimer-Idle/slimer-idle3.png" id="4_vhbo1"]
+[ext_resource type="Texture2D" uid="uid://c3keq7ie3v1hg" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Slimer-Idle/slimer-idle4.png" id="5_rtxg1"]
+[ext_resource type="Texture2D" uid="uid://bv1ac4bf17qp2" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Slimer-Idle/slimer-idle5.png" id="6_s7t64"]
+[ext_resource type="Texture2D" uid="uid://c2gugktb0aouj" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Slimer-Idle/slimer-idle6.png" id="7_pycan"]
+[ext_resource type="Texture2D" uid="uid://cjas7kpy26i0o" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Slimer-Idle/slimer-idle7.png" id="8_fwopd"]
+[ext_resource type="Texture2D" uid="uid://wr0bu3exn3ei" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Slimer-Idle/slimer-idle8.png" id="9_sx2si"]
+[ext_resource type="Texture2D" uid="uid://doyxaafgu7re8" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Slimer/slimer1.png" id="10_kd3s3"]
+[ext_resource type="Texture2D" uid="uid://8nccpxegfec2" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Slimer/slimer2.png" id="11_ruurn"]
+[ext_resource type="Texture2D" uid="uid://dtj55uwdfkgl4" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Slimer/slimer3.png" id="12_08r05"]
+[ext_resource type="Texture2D" uid="uid://davvyifk84uwm" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Slimer/slimer4.png" id="13_g1x34"]
+[ext_resource type="Texture2D" uid="uid://b2eh05pkii2te" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Slimer/slimer5.png" id="14_2klfm"]
+[ext_resource type="Texture2D" uid="uid://dkhne8ruriwp5" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Slimer/slimer6.png" id="15_t2rj8"]
+[ext_resource type="Texture2D" uid="uid://dup6as0theg57" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Slimer/slimer7.png" id="16_a2avb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8lj7k"]
+radius = 23.3452
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_an4fa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wj1f4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0t433")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vhbo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rtxg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s7t64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pycan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fwopd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sx2si")
+}],
+"loop": true,
+"name": &"Idel",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_kd3s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ruurn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_08r05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_g1x34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2klfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_t2rj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_a2avb")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_h60rc"]
+resource_name = "Idel"
+
+[sub_resource type="Animation" id="Animation_aiwtl"]
+resource_name = "Jump"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbjqo"]
+_data = {
+"Idel": SubResource("Animation_h60rc"),
+"Jump": SubResource("Animation_aiwtl")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ja7ho"]
+radius = 32.311
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Players2"]]
+script = ExtResource("1_u5a4g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_8lj7k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -15)
+scale = Vector2(1.7197, 1.75)
+sprite_frames = SubResource("SpriteFrames_an4fa")
+animation = &"Idel"
+frame_progress = 0.275527
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pbjqo")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, 0)
+shape = SubResource("CircleShape2D_ja7ho")

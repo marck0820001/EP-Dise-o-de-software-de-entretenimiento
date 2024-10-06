@@ -1,0 +1,101 @@
+[gd_scene load_steps=18 format=3 uid="uid://dshic03a3pjob"]
+
+[ext_resource type="Script" path="res://player4/player.gd" id="1_5hcf4"]
+[ext_resource type="Texture2D" uid="uid://faoy3u2ov3td" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dog-idle/dog-idlet1.png" id="2_fwnl2"]
+[ext_resource type="Texture2D" uid="uid://nlj8gc8infqj" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dog-idle/dog-idlet2.png" id="3_66nrm"]
+[ext_resource type="Texture2D" uid="uid://ctiac0w4ysaem" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dog-idle/dog-idlet3.png" id="4_vvxm8"]
+[ext_resource type="Texture2D" uid="uid://8o7sqaqap7db" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dog-idle/dog-idlet4.png" id="5_og0dt"]
+[ext_resource type="Texture2D" uid="uid://bi544hr4rqfi3" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dog-idle/dog-idlet5.png" id="6_cy4f6"]
+[ext_resource type="Texture2D" uid="uid://dl4wnl3wmxrkm" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dog-idle/dog-idlet6.png" id="7_1aw3a"]
+[ext_resource type="Texture2D" uid="uid://dc63yrwysv1dx" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dog/dog1.png" id="8_mjia4"]
+[ext_resource type="Texture2D" uid="uid://de64ojqs1qcg4" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dog/dog2.png" id="9_1bd6l"]
+[ext_resource type="Texture2D" uid="uid://dvfatpmy02ffa" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dog/dog3.png" id="10_eh1o7"]
+[ext_resource type="Texture2D" uid="uid://c7a2c0k4a46hp" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dog/dog4.png" id="11_itltu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8lj7k"]
+radius = 19.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_an4fa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fwnl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_66nrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vvxm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_og0dt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cy4f6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1aw3a")
+}],
+"loop": true,
+"name": &"Idel",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_mjia4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1bd6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_eh1o7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_itltu")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_h60rc"]
+resource_name = "Idel"
+
+[sub_resource type="Animation" id="Animation_aiwtl"]
+resource_name = "Jump"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbjqo"]
+_data = {
+"Idel": SubResource("Animation_h60rc"),
+"Jump": SubResource("Animation_aiwtl")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xqyai"]
+radius = 23.0868
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Players2"]]
+script = ExtResource("1_5hcf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_8lj7k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, -5)
+scale = Vector2(1.7197, 1.75)
+sprite_frames = SubResource("SpriteFrames_an4fa")
+animation = &"Run"
+frame_progress = 0.442241
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pbjqo")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_xqyai")

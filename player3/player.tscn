@@ -1,0 +1,104 @@
+[gd_scene load_steps=19 format=3 uid="uid://ddpbwqrbqels1"]
+
+[ext_resource type="Texture2D" uid="uid://pmvmikaq2f3f" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dino-Idle/dino-idle1.png" id="2_ckne2"]
+[ext_resource type="Texture2D" uid="uid://ssrjyqw780u6" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dino-Idle/dino-idle2.png" id="3_arvqu"]
+[ext_resource type="Texture2D" uid="uid://ckiww76tf2vkt" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dino-Idle/dino-idle3.png" id="4_osat1"]
+[ext_resource type="Texture2D" uid="uid://2lsujlxk15d0" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dino-Idle/dino-idle4.png" id="5_pg5u0"]
+[ext_resource type="Texture2D" uid="uid://botc2tr88nyng" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dino/dino1.png" id="6_bopk0"]
+[ext_resource type="Texture2D" uid="uid://o3anynbp2pcf" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dino/dino2.png" id="7_6y0gq"]
+[ext_resource type="Texture2D" uid="uid://be534x7aidbmf" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dino/dino3.png" id="8_3s6m3"]
+[ext_resource type="Texture2D" uid="uid://cj3iuuqw228t4" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dino/dino4.png" id="9_8wvg1"]
+[ext_resource type="Texture2D" uid="uid://dleqgkmjkn3gh" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dino/dino5.png" id="10_12gxn"]
+[ext_resource type="Texture2D" uid="uid://l2xspr2yfccl" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dino/dino6.png" id="11_o6407"]
+[ext_resource type="Script" path="res://player3/player.gd" id="12_umaqp"]
+[ext_resource type="Texture2D" uid="uid://c5o0l8s7la6t5" path="res://Sunny Land Collection Files/Assets/Characters/Chibi Enemies Pack/Sprites/Dino/dino7.png" id="12_yse3t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8lj7k"]
+radius = 22.0227
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_an4fa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ckne2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_arvqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_osat1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pg5u0")
+}],
+"loop": true,
+"name": &"Idel",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_bopk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6y0gq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3s6m3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8wvg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_12gxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_o6407")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yse3t")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_h60rc"]
+resource_name = "Idel"
+
+[sub_resource type="Animation" id="Animation_aiwtl"]
+resource_name = "Jump"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbjqo"]
+_data = {
+"Idel": SubResource("Animation_h60rc"),
+"Jump": SubResource("Animation_aiwtl")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xu1d0"]
+radius = 25.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Players2"]]
+script = ExtResource("12_umaqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_8lj7k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -5)
+scale = Vector2(1.7197, 1.75)
+sprite_frames = SubResource("SpriteFrames_an4fa")
+animation = &"Idel"
+frame_progress = 0.475851
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pbjqo")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xu1d0")
